@@ -21,18 +21,18 @@ object DriverFactory {
                 ChromeDriverManager.getInstance().setup()
                 return ChromeDriver()
             }
-            when (browser) {
+            return when (browser) {
                 "IE" -> {
                     InternetExplorerDriverManager.getInstance().setup()
-                    return InternetExplorerDriver()
+                    InternetExplorerDriver()
                 }
                 "FIREFOX" -> {
                     FirefoxDriverManager.getInstance().setup()
-                    return FirefoxDriver()
+                    FirefoxDriver()
                 }
                 else -> {
                     ChromeDriverManager.getInstance().setup()
-                    return ChromeDriver()
+                    ChromeDriver()
                 }
             }
         }
